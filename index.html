@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mini Project</title>
     <link rel="stylesheet" href="css\style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Josefin+Sans:wght@300;400&family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <nav>
@@ -12,70 +19,194 @@
             <div class="logo-icon"></div>
         </header>
 
+        <h1 class="sekolah">OUR <span>SCHOOL</span></h1>
+
         <section class="nav-container">
             <a href="#home" class="nav-item">Home</a>
             <a href="#profile" class="nav-item">Our Profile</a>
             <a href="#achivement" class="nav-item">Achivement</a>
-            <a href="#massage" class="nav-item">Massage Us</a>
+            <a href="#message" class="nav-item">Massage Us</a>
         </section>
+
     </nav>
-    <hr>
+    
  
     <main>
         <!-- untuk tampilan menyambut user -->
         <article>
-            <header>
-                <h1>Hi user, Welcome To Website</h1>
-            </header>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nam!</p>
             <div class="banner-img">
             </div>
+
+            <div class="opening" id="home">
+                <header>
+                    <h1 class="sambutan">Hi <span id="greeting"></span>, Welcome to Our Website School</h1>
+                </header>
+                <br><br>
+                <div class="visimisi">
+                    <span>Vision</span>
+                    <p>To create a generation of lifelong learners who are responsible, innovative, and globally aware.</p>
+                    <span>Mission</span>
+                    <p>To provide a safe and nurturing environment that encourages academic excellence and personal growth.
+                        To foster critical thinking, creativity, and collaboration through a diverse and inclusive curriculum.
+                        To cultivate a sense of social responsibility and global citizenship in every student.
+                    </p>
+                </div>
+            </div>
+
         </article>
+
         <br>
-        <hr>
+        
 
         <!-- untuk our Facilitation -->
         <section>
             <header>
-                <h1>Our Profile</h1>
+                <h1 class="judul-profile" id="profile" style="color: white;">Our Profile</h1>
             </header>
 
             <!-- gambar lingkaran -->
             <section class="profile-container">
                 <div class="profile-item">
 
-                    <div class="profile-img"></div>
-                    <h2>Software Engineer</h2>
+                    <div class="profile-img1"></div>
+                    <h2>Computer Lab</h2>
 
                 </div>
 
                 <div class="profile-item">
 
-                    <div class="profile-img"></div>
-                    <h2>Software Engineer</h2>
+                    <div class="profile-img2"></div>
+                    <h2>Profesional Teacher</h2>
 
                 </div>
 
                 <div class="profile-item">
 
-                    <div class="profile-img"></div>
-                    <h2>Software Engineer</h2>
+                    <div class="profile-img3"></div>
+                    <h2>Sport Field</h2>
 
-                </div>  
+                </div>
+
+                <div class="profile-item">
+
+                    <div class="profile-img4"></div>
+                    <h2>Classroom</h2>
+
+                </div>
+                
+                
             </section>
         </section>
 
-        <!-- untuk form dan kolom terkirim -->
-        <section>
+        <!-- Achivement -->
 
+        <section class="prestasi" id="achivement">
+            <header>
+                <h1 class="judul-prestasi">Achivement</h1>
+            </header>
+
+            <div class="prestasi-container">
+                <div class="prestasi-item">
+                    <div class="star"><i data-feather="star"></i></div>
+                    <h2>1000+ Students</h2>
+                    <p>Berhasil mengikuti Ujian Nasional</p>
+                </div>
+
+                <div class="prestasi-item">
+                    <div class="star"><i data-feather="book-open"></i></div>
+                    <h2>1000+ Students</h2>
+                    <p>Berhasil Lolos Kampus Ternama</p>
+                </div>
+
+                <div class="prestasi-item">
+                    <div class="star"><i data-feather="edit-2"></i></div>
+                    <h2>100+ Students</h2>
+                    <p>Juara Olimpiade nasional dan internasional</p>
+                </div>
+            </div>
         </section>
 
-    </main>
+        
 
-    <hr>
+        <!-- untuk form dan kolom terkirim -->
+        <header class="judul-message" id="message" style="color: white;">Message Us</header>
+        <section class="pesan">
+        
+            <form name="message-form" onsubmit="return validateForm()">
+                <div class="input-group">
+                    Nama : <input type="text" name="full-name" placeholder="Nama">
+                </div>
+                <br><br>
+        
+                <div class="input-group">
+                    Tanggal Lahir : <input type="date" name="birth-date">
+                </div>
+                <br><br>
+        
+                <div class="input-group">
+                    Jenis Kelamin :
+                    <input type="radio" name="gender" id="male" value="Laki Laki">
+                    <label for="male">Laki-Laki</label>
+                    <input type="radio" name="gender" id="female" value="Perempuan">
+                    <label for="female">Perempuan</label>
+                    </div>
+                <br><br>
+
+                <div class="input-group">
+                    Pesan : <br>
+                    <textarea name="messages" placeholder="tulispesan disini"></textarea>
+                </div>
+        
+                <input type="submit" value="submit" class="button">
+            </form>
+        
+            <br><br>
+        
+            <div class="return">
+                <p>Nama: <span id="sender-full-name"></span></p><br><br>
+                <p>Tanggal Lahir: <span id="sender-birth-date"></span></p><br><br>
+                <p>Jenis Kelamin: <span id="sender-gender"></span></p><br><br>
+                <p>Pesan: <span id="sender-messages"></span> </p><br><br>
+            </div>
+        
+        </section>
+        
+
+    </main>
+    <br><br>
+    
 
     <footer>
-        <p>Made by Ayu Wulandari</p>
+        <div class="social">
+            <a href="#">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="#">
+                <i data-feather="twitter"></i>
+            </a>
+            <a href="#">
+                <i data-feather="facebook"></i>
+            </a>
+        </div>
+
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#profile">Our Profile</a>
+            <a href="#achivement">Achivement</a>
+            <a href="#message">Message Us</a>
+        </div>
+
+        <div class="credit">
+            <p>
+                Created By <a href="">Ayu Wulandari</a>. | &copy; 2024           </p>
+        </div>
     </footer>
+
+    <!-- Feather Icons -->
+    <script>
+        feather.replace()
+      </script>
+
+<script src="js/script.js"></script>
 </body>
 </html>
